@@ -4,31 +4,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body, html {
-  height: 100%;
-  margin: 0;backdrop-filter: blur(5px);
+  height: 100vh;
 }
 
 body {
   background-image: url("gcettsimg.jpg");
-  height: 110vh; 
+  height: 100vh; 
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   overflow-x:hidden;
-  
+  background-attachment:fixed ;
+  margin: auto;
+  overflow-x:hidden ;
 
 }
 @media only screen and (max-width: 1400px) {
   body {
-    height: 200vh; 
-    backdrop-filter: blur(5px);
+    height: 100vh;
   }
 }
 
 @media only screen and (max-width: 676px) {
   body {
-    height: 300vh; 
-    backdrop-filter: blur(5px);
+    height: 100vh; 
   }
 }
 body:before {
@@ -37,25 +36,35 @@ body:before {
     vertical-align: middle;
     font-size: 0;
     height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
     }
 .grid-container {
-  display: grid;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 90vw;
-  margin: 1vw 4vw 0vw 4vw;
-  grid-template-rows: 20vh 30vh 60vh;
-  padding: 10px;
+  display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0rem;
+    bottom: 0rem;
+    right: 0rem;
+    width: 90vw;
+    padding: 10px;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
   
 }
 .grid2 {
+  margin: auto;
   align-items: start;
-	display: grid;
-	grid-gap: 16px;
-	grid-template-columns: repeat(auto-fit, 300px);
-	justify-content: center;
-  margin-top: 50px;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    justify-content: center;
+    grid-auto-flow: dense;
+    width: 85%;
   
 }
 .head   {
@@ -98,7 +107,6 @@ box-shadow: 0 1px 0 #ccc,
   border: none;
   color: white;
  font-weight: 600;
-  padding: 32px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -108,6 +116,7 @@ box-shadow: 0 1px 0 #ccc,
   border-radius: 20px;
   margin-top: 55px;
   border: rgb(0, 58, 112) 4px solid;
+  padding: 15px 30px;
 }
 .button1:hover{
   background-color: #007979;
@@ -136,7 +145,6 @@ box-shadow: 0 1px 0 #ccc,
 
 }
 div.polaroid {
-  width: 250px;
   margin-top: 60px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
@@ -145,6 +153,12 @@ div.polaroid {
 }
 div.polaroid:hover{
   filter: grayscale(100%);
+}
+div.polaroid img::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: black;
 }
 div.container {
   padding: 5px;
@@ -166,6 +180,7 @@ div.container {
   margin-top: 25px;
   border: rgb(255, 203, 203) 4px solid;
 }
+
 </style>
 </head>
 <body>
@@ -201,7 +216,7 @@ div.container {
             style="border-top: rgb(105, 108, 255) 5px solid;color: #00012c;"
             >
               <p
-              style="font-size: 45px;"
+              style="font-size: 2rem;"
               >CSE</p>
             </div>
           </div>
@@ -218,14 +233,13 @@ div.container {
             style="border-top: rgb(55, 253, 48) 5px solid;color: #042c00;"
             >
               <p
-              style="font-size: 45px;"
+              style="font-size: 2rem;"
               >IT</p>
             </div>
           </div>
           <div class="polaroid"
           style=" border:6px solid rgb(87, 42, 0);background-color: rgb(250, 225, 155);"
-
-          >
+          onClick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSfHXuzDVYwqV9FIJpffDUVBlPU1Z9B7xEWxbjGNtJoZ8_z4yg/viewform?usp=sf_link'">
             <img src="Scribble-Day-201685201674116_99.jpg" alt="Norway" 
             style="width:100%;
             border-radius: 38PX 38PX 0PX 0PX;">
@@ -233,13 +247,13 @@ div.container {
             style="border-top: rgb(255, 185, 105) 5px solid;color: #2c1500;"
             >
               <p
-              style="font-size: 45px;"
+              style="font-size: 2rem;"
               >TT</p>
             </div>
           </div>
           <div class="polaroid"
           style=" border:6px solid rgb(87, 0, 0);background-color: rgb(250, 155, 171);"
-          >
+          onClick="location.href='https://docs.google.com/forms/d/e/1FAIpQLScs9s8ocVAy9hDh8L7uDQoihfsGF2FtsckBACcOG0lyj_0CJg/viewform?usp=sf_link'">
             <img src="Scribble-Day-201685201674116_99.jpg" alt="Norway" 
             style="width:100%;
             border-radius: 38PX 38PX 0PX 0PX;">
@@ -247,7 +261,7 @@ div.container {
             style="border-top: rgb(255, 105, 105) 5px solid;color: #2c0000;"
             >
               <p
-              style="font-size: 45px;"
+              style="font-size: 2rem;"
               >APM</p>
             </div>
           </div>
